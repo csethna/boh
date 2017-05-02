@@ -5,11 +5,11 @@ with open('master.csv', 'rb') as master_csvfile: # using open function, open the
 
 with open('copy.csv', 'rb') as copy_csvfile: # using open function, open the CSV file and use attribute "as" to define as "copy_csvfile" user-defined name.
     copy_reader = csv.DictReader(copy_csvfile, delimiter=',') # creates variable "copy_reader" defined as running csv(.= library) function on "csv file" with deliminter (the character that separates each word) as "space"
-    copy_inventory = {row['Campaign_Number']: int(row['Available_Issue']) for row in copy_reader if int(row['Available_Issue'])}
+    copy_inventory = {row['Item_Number']: int(row['Current_Available']) for row in copy_reader if int(row['Current_Available'])}
 
 for item_number in master_inventory:
     if abs(master_inventory[item_number] - copy_inventory[item_number]) > 500:
-        print 'Item {} - master count: {}, copy count:{}'.format(item_number, master_inventory[item_number], copy_inventory[Campaign_Number])
+        print 'Item {} - master count: {}, copy count:{}'.format(item_number, master_inventory[item_number], copy_inventory[item_number])
 
 # master_inventory = {}
 # for row in spamreader:
