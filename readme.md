@@ -8,6 +8,9 @@ Script serves to easily and quickly identify differences greater than or equal t
 - **master** refers to the `boh report` which can be downloaded from the GPO RADS reporting system.
 
 ### Requirements
+- [Python 3.6](https://python.org) or higher (available through the GSA software catalog).
+- `csv` standard Python library.
+- Ability to download or clone this repository from GitHub.
 
 ### Pro tips
 - make sure the item numbers in `master` include leading zeros (0) on projects created in FY16 and later.
